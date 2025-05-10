@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tribute untuk Kurt Cobain, musisi legendaris dari band Nirvana."
+    />
+    <title>Moksa Band - Kurt Cobain Memorial</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Styles -->
+    <style>
+      :root {
+        --primary: #926d48;
+        --bg: #010101;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg);
+        color: #fff;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.4rem 7%;
+        background-color: rgba(1, 1, 1, 0.8);
+        border-bottom: 1px solid var(--primary);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+      }
+
+      .navbar-logo {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #fff;
+        font-style: italic;
+      }
+
+      .navbar-nav a {
+        color: #fff;
+        font-size: 1.3rem;
+        margin: 0 1rem;
+      }
+
+      .navbar-nav a:hover,
+      .navbar-extra a:hover {
+        color: var(--primary);
+      }
+
+      .navbar-extra a {
+        color: #fff;
+        margin: 0 0.5rem;
+      }
+
+      #hamburger-menu {
+        display: none;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: url("img/header-bg.jpeg") center/cover no-repeat;
+        position: relative;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 30%;
+        bottom: 0;
+        background: linear-gradient(
+          0deg,
+          rgba(1, 1, 3, 1) 8%,
+          rgba(255, 255, 255, 0) 55%
+        );
+      }
+
+      .hero .content {
+        padding: 1.4rem 7%;
+        max-width: 70rem;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 5em;
+        text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+      }
+
+      .hero p {
+        font-size: 1.7rem;
+        margin-top: 1rem;
+        font-weight: 100;
+        line-height: 1.4;
+        text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+      }
+
+      .cta {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 1rem 3rem;
+        font-size: 1.4rem;
+        color: #fff;
+        background-color: var(--primary);
+        border-radius: 0.5rem;
+      }
+
+      section {
+        padding: 8rem 7% 2rem;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 2.6rem;
+        margin-bottom: 3rem;
+      }
+
+      h2 span {
+        color: var(--primary);
+      }
+
+      .about .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .about-img img {
+        width: 100%;
+        max-width: 150px;
+        border-radius: 8px;
+        margin: 0.5rem;
+      }
+
+      .content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .content p {
+        margin-bottom: 0.8rem;
+        font-size: 1.4rem;
+        font-weight: 100;
+        line-height: 1.6;
+      }
+
+      .menu .menu-card {
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      .menu-card img {
+        border-radius: 50%;
+        width: 200px;
+      }
+
+      .menu-card-title {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+      }
+
+      .menu-card-price {
+        color: var(--primary);
+      }
+
+      .contact form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 400px;
+        margin: auto;
+      }
+
+      .input-group {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: #333;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .input-group input {
+        flex: 1;
+        background: none;
+        color: #fff;
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 1rem;
+        background: var(--primary);
+        color: white;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .about .row {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">web <span>Riski</span></a>
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang KURT</a>
+        <a href="#menu">Berita Lainnya</a>
+        <a href="#contact">Kontak</a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Kurt Cobain Memorial</h1>
+        <p>
+          Punk adalah kebebasan musik. Itu mengatakan, melakukan, dan memainkan
+          apa yang Anda inginkan
+        </p>
+        <p>
+          Mereka menertawakanku karena aku berbeda; Aku menertawakan mereka
+          karena mereka semua sama.
+        </p>
+        <a href="#about" class="cta">Klik Disini</a>
+      </main>
+    </section>
+
+    <section id="about" class="about">
+      <h2><span>Tentang</span> KURT</h2>
+      <div class="row">
+        <div class="about-img">
+          <img src="img/kurt mtv.jpeg" alt="Kurt Cobain" />
+          <img src="img/kurt mtv 1.jpeg" alt="Kurt di MTV" />
+          <img src="img/kurt depresi.jpeg" alt="Kurt MTV Live" />
+          <img src="img/kurt cobain.jpeg.jpg" alt="Kurt Meninggal" />
+          <img src="img/Kurt meninggal.jpeg" alt="Kurt Depresi" />
+        </div>
+        <div class="content">
+          <h3>Masa Kecil</h3>
+          <p>
+            Kurt Donald Cobain lahir pada 20 Februari 1967, di Aberdeen,
+            Washington. Orang tuanya bercerai saat ia masih muda, memengaruhi
+            masa kecilnya secara signifikan.
+          </p>
+          <p>
+            Ia tumbuh dalam atmosfer yang tidak stabil, namun telah menyukai
+            musik sejak kecil.
+          </p>
+          <h3>Naik Daun dengan Nirvana</h3>
+          <p>
+            Pada 1987, Cobain dan Krist Novoselic membentuk Nirvana. Album
+            "Nevermind" (1991) sukses besar dengan hit "Smells Like Teen
+            Spirit".
+          </p>
+          <h3>Perjuangan Pribadi</h3>
+          <p>
+            Di balik kesuksesan, Kurt menghadapi ketergantungan obat dan masalah
+            kesehatan mental. Ketenaran memperburuk kondisinya.
+          </p>
+          <h3>Meninggalnya Kurt Cobain</h3>
+          <p>
+            Kurt ditemukan meninggal pada 5 April 1994 di Seattle. Tubuhnya
+            ditemukan dua setengah hari kemudian.
+          </p>
+          <h3>Tur Terakhir</h3>
+          <p>
+            Tur Eropa terakhir mereka berakhir di Munich, 1 Maret. Setelah itu,
+            Kurt ke Roma, overdosis, dan sempat menulis catatan bunuh diri.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu">
+      <h2><span>KURT</span> COBAIN</h2>
+      <p>
+        Seorang musisi rock Amerika dan ikon grunge, terkenal sebagai frontman
+        Nirvana.
+      </p>
+      <div class="menu-card">
+        <img src="img/nirvana.jpeg" alt="Nirvana Band" />
+        <div class="menu-card-title">- Nirvana -</div>
+        <p class="menu-card-price">1987 - 1994</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2><span>KONTAK</span> KAMI</h2>
+      <p>Jika Anda membutuhkan kami</p>
+      <form>
+        <div class="input-group">
+          <i data-feather="user"></i>
+          <input type="text" placeholder="Nama" />
+        </div>
+        <div class="input-group">
+          <i data-feather="mail"></i>
+          <input type="email" placeholder="Email" />
+        </div>
+        <div class="input-group">
+          <i data-feather="phone"></i>
+          <input type="text" placeholder="No HP" />
+        </div>
+        <button type="submit" class="btn">Kirim Pesan</button>
+      </form>
+    </section>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
